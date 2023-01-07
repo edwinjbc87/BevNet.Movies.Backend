@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Contracts\" />
+    <None Remove="Implementations\" />
+    <None Remove="Microsoft.Extensions.Options" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="Implementations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BevNet.Movies.Backend.CrossCutting\BevNet.Movies.Backend.CrossCutting.csproj" />
+    <ProjectReference Include="..\BevNet.Movies.Backend.Infrastructure\BevNet.Movies.Backend.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

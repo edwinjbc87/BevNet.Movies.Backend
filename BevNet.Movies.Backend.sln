@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BevNet.Movies.Backend.API", "BevNet.Movies.Backend.API\BevNet.Movies.Backend.API.csproj", "{76EC549D-3852-46AA-BFBE-926EBA0DE43A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BevNet.Movies.Backend.Domain", "BevNet.Movies.Backend.Domain\BevNet.Movies.Backend.Domain.csproj", "{CFA4C9CC-753E-490D-830F-529641152CA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BevNet.Movies.Backend.Infrastructure", "BevNet.Movies.Backend.Infrastructure\BevNet.Movies.Backend.Infrastructure.csproj", "{C4DE7B05-987E-48B9-B206-7F4E844AA121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BevNet.Movies.Backend.CrossCutting", "BevNet.Movies.Backend.CrossCutting\BevNet.Movies.Backend.CrossCutting.csproj", "{782ADA68-C65A-49D2-AC29-0A65A11F1A48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C3555D9-8334-4F3A-898B-438FEB8AE8D7}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76EC549D-3852-46AA-BFBE-926EBA0DE43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76EC549D-3852-46AA-BFBE-926EBA0DE43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76EC549D-3852-46AA-BFBE-926EBA0DE43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76EC549D-3852-46AA-BFBE-926EBA0DE43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA4C9CC-753E-490D-830F-529641152CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA4C9CC-753E-490D-830F-529641152CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA4C9CC-753E-490D-830F-529641152CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA4C9CC-753E-490D-830F-529641152CA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4DE7B05-987E-48B9-B206-7F4E844AA121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4DE7B05-987E-48B9-B206-7F4E844AA121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4DE7B05-987E-48B9-B206-7F4E844AA121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4DE7B05-987E-48B9-B206-7F4E844AA121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{782ADA68-C65A-49D2-AC29-0A65A11F1A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{782ADA68-C65A-49D2-AC29-0A65A11F1A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{782ADA68-C65A-49D2-AC29-0A65A11F1A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{782ADA68-C65A-49D2-AC29-0A65A11F1A48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB1FB2E8-21C3-48C4-BB1F-1DF18A1D80A1}
+	EndGlobalSection
+EndGlobal
