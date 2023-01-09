@@ -29,13 +29,6 @@ namespace BevNet.Movies.Backend.API.Controllers
             return result;
         }
 
-        // GET api/movies/5
-        [HttpGet("{id}")]
-        public async Task<Movie> Get(string id)
-        {
-            return await moviesService.GetMovieById(id);
-        }
-
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)

@@ -10,6 +10,7 @@
     <None Remove="Contracts\" />
     <None Remove="Implementations\" />
     <None Remove="Microsoft.Extensions.Options" />
+    <None Remove="Microsoft.Extensions.Caching.Memory" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
@@ -18,5 +19,8 @@
   <ItemGroup>
     <ProjectReference Include="..\BevNet.Movies.Backend.CrossCutting\BevNet.Movies.Backend.CrossCutting.csproj" />
     <ProjectReference Include="..\BevNet.Movies.Backend.Infrastructure\BevNet.Movies.Backend.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
   </ItemGroup>
 </Project>

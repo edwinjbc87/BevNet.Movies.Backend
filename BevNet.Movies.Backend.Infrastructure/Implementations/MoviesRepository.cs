@@ -22,13 +22,6 @@ namespace BevNet.Movies.Backend.Infrastructure.Implementations
             var content = await resp.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<MoviesSearchResult>(content);
         }
-
-        public async Task<Movie> GetById(string id)
-        {
-            Movie movie = new Movie() { imdbID = id, Title = "Test", Year = 2023 };
-
-            return movie;
-        }
     }
 }
 

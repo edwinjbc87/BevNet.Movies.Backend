@@ -6,6 +6,5 @@ namespace BevNet.Movies.Backend.Infrastructure.Contracts
     public interface IMoviesRepository
     {
         Task<MoviesSearchResult> SearchMovies(string title, int page = 1);
-        Task<Movie> GetById(string id);
     }
 }
