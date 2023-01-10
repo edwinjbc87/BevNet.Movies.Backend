@@ -5,6 +5,7 @@ using BevNet.Movies.Backend.Domain.Contracts;
 using BevNet.Movies.Backend.Infrastructure.Contracts;
 using BevNet.Movies.Backend.Infrastructure.Models;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 
 namespace BevNet.Movies.Backend.Domain.Implementations
 {
@@ -13,12 +14,13 @@ namespace BevNet.Movies.Backend.Domain.Implementations
         private readonly IMoviesRepository moviesRepository;
         private readonly IMemoryCache memoryCache;
         private readonly MemoryCacheEntryOptions cacheOptions;
+        private readonly ILogger<MoviesService> logger;
 
-
-        public MoviesService(IMoviesRepository moviesRepository, IMemoryCache memoryCache)
+        public MoviesService(IMoviesRepository moviesRepository, IMemoryCache memoryCache, ILogger<MoviesService> logger)
         {
             this.moviesRepository = moviesRepository;
             this.memoryCache = memoryCache;
+            this.logger = logger;
 
             this.cacheOptions = new MemoryCacheEntryOptions();
             this.cacheOptions.SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
@@ -27,12 +29,21 @@ namespace BevNet.Movies.Backend.Domain.Implementations
 
         public async Task<MoviesSearchResult> GetMovies(string title="", int page=1)
         {
-            MoviesSearchResult result = memoryCache.Get<MoviesSearchResult>($"{page}-{title.ToLowerInvariant()}");
-            if (result == null) {
-                result = await moviesRepository.SearchMovies(title, page);
-                memoryCache.Set<MoviesSearchResult>($"{page}-{title.ToLowerInvariant()}", result, this.cacheOptions);
+            try
+            {
+                MoviesSearchResult result = memoryCache.Get<MoviesSearchResult>($"{page}-{(title ?? "").ToLowerInvariant()}");
+                if (result == null)
+                {
+                    result = await moviesRepository.SearchMovies(title, page);
+                    memoryCache.Set<MoviesSearchResult>($"{page}-{(title ?? "").ToLowerInvariant()}", result, this.cacheOptions);
+                }
+                return result;
+
+            }catch(Exception ex)
+            {
+                logger.LogError(ex, ex.Message);
+                throw ex;
             }
-            return result;
         }
     }
 }

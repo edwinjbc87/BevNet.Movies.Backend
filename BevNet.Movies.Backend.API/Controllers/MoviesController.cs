@@ -15,17 +15,28 @@ namespace BevNet.Movies.Backend.API.Controllers
     public class MoviesController : Controller
     {
         private readonly IMoviesService moviesService;
+        private readonly ILogger<MoviesController> logger;
 
-        public MoviesController(IMoviesService moviesService)
+        public MoviesController(IMoviesService moviesService, ILogger<MoviesController> logger)
         {
             this.moviesService = moviesService;
+            this.logger = logger;
         }
 
         // GET: api/movies
         [HttpGet]
-        public async Task<MoviesSearchResult> Get(string title="", int page=1)
+        public async Task<ActionResult<MoviesSearchResult>> Get(string title="", int page=1)
         {
-            var result = await moviesService.GetMovies(title, page);
+            MoviesSearchResult result = null;
+            try
+            {
+                result = await moviesService.GetMovies(title, page);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, ex.Message);
+                return StatusCode(500, $"Hubo un error en el servicio.");
+            }
             return result;
         }
 
